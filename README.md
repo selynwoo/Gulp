@@ -27,5 +27,12 @@
 ### 버전확인 
 - cmd : `gulp -v` 입력
 
+<br>
+## Gulp 프로젝트 설치
+### 설치 
+1) cmd : `cd Desktop/Gulp` 해당 프로젝트 디렉토리 입력
+2) cmd : `npm init : package.json 생
+3) cmd : `npm install --save-dev gulp 입력 : [node_modules] 생성
+4) package.json 위치에 gulpfile.js 작성
 
 
