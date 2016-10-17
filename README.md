@@ -16,10 +16,16 @@
 <br>
 ## Gulp 전역설치
 [gulp 패키지] (https://www.npmjs.com/package/gulp)
-- 참조 
-<br>
+
+### 참조 
 ![Documentation documentation for the current release!] (./Resources/images/gulp-documentation.jpg)
 ![Getting Started] (./Resources/images/gulp-documentation_start.jpg)
 
-- 설치 
+### 설치 
+- cmd : `npm install --global gulp` 입력
+
+### 버전확인 
+- cmd : `gulp -v` 입력
+
+
 
