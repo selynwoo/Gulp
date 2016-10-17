@@ -1,5 +1,5 @@
 # Gulp
-gulp 시작하기
+자동화 빌드 시스템
 
 ## Nodejs 설치
 [nodejs 다운로드] (https://nodejs.org/)
@@ -7,8 +7,12 @@ gulp 시작하기
 ![nodejs Download] (./Resources/images/node-msi.jpg)
 
 ### Node 버전확인
+- cmd : `node --version` 입력
 
+### npm (Node Package Manager) 버전확인
+- cmd : `npm --version` 입력
 
-## Gulp 
+## Gulp 전역설치
+
 
 
