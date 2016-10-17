@@ -17,6 +17,9 @@
 ## Gulp 전역설치
 [gulp 패키지] (https://www.npmjs.com/package/gulp)
 <br>
+- 참조
 ![Documentation documentation for the current release!] (./Resources/images/gulp-documentation.jpg)
 ![Getting Started] (./Resources/images/gulp-documentation_start.jpg)
+
+- 설치 
 
