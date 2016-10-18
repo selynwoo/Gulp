@@ -90,6 +90,8 @@ gulp.task('combine:js', function(){
 <br>
 ## gulp-jshint (문법검사) 
 - **설치 [ cmd : `npm i -D gulp-jshint` ]**
+- **설치 [ cmd : `npm i jshint-stylish` ]**
+- 문법검사는 js 병합전
 
 - **Modules 호출**
 ```md
@@ -98,5 +100,34 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     concat = require('gulp-concat');
 ```
+- **일반** <br>
+```md
+gulp.task('combine:js', function(){
+	gulp
+		.src('src/js/libs/**/*.js')
+		.pipe(jshint())
+		.pipe(concat('combined.js'))
+		.pipe(uglify({
+			mangle : false,
+			preserveComments: 'all'
+		}))
+		.pipe(gulp.dest('./dist'));
+});
+```
 
+- **가독성** <br>
+```md
+gulp.task('combine:js', function(){
+	gulp
+		.src('src/js/libs/**/*.js')
+		.pipe(jshint())
+		.pipe(jshint.reporter('jshint-stylish'))
+		.pipe(concat('DOMLibrary.js'))
+		.pipe(uglify({
+			mangle : false,
+			preserveComments: 'all'
+		}))
+		.pipe(gulp.dest('./dist'));
+});
+```
 
