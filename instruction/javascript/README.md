@@ -1,6 +1,7 @@
 #Javascript 명령어 
 - `gulp-concat` (병합)
-- `gulp-uglify` (압)
+- `gulp-uglify` (압축)
+- `gulp-jshint` (문법검사)
 <br>
 
 ## gulp-concat (병합) 
@@ -85,6 +86,17 @@ gulp.task('combine:js', function(){
 		}))
 		.pipe(gulp.dest('./dist'));
 });
+```
+<br>
+## gulp-jshint (문법검사) 
+- **설치 [ cmd : `npm i -D gulp-jshint` ]**
+
+- **Modules 호출**
+```md
+var gulp = require('gulp'),
+    jshint = require('gulp-jshint'),
+    uglify = require('gulp-uglify'),
+    concat = require('gulp-concat');
 ```
 
 
