@@ -1,10 +1,17 @@
 #Javascript 명령어 
- - `gulp-concat` (병합)
+- `gulp-concat` (병합)
+- `gulp-uglify` (병합)
 <br>
 
 ## gulp-concat (병합) 
 **설치** <br>
 - cmd : `npm i -D gulp-concat` 
+
+**Modules 호출**
+```md
+var gulp = require('gulp'),
+    concat = require('gulp-concat');
+```
 
 **지정한 js 병합** <br>
 ```md
