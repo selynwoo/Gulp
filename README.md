@@ -35,6 +35,14 @@
 3) cmd : `npm install --save-dev gulp` 입력 : [node_modules] 생성 <br>
 4) package.json 위치에 gulpfile.js 작성 <br>
 
+### 기본(Default) 테스크  
+```md
+gulp.task('default', function(){
+	// 콘솔 (Console)에 메시지 기록(Log)
+	console.log('gulp default 수행되었습니다.');
+});
+```
+
 ### 명령어
 - **Javascript** ([instruction : javascript](instruction/javascript/README.md))
 
