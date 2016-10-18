@@ -6,7 +6,7 @@
 **설치** <br>
 - cmd : `npm i -D gulp-concat` 
 
-**문법** <br>
+**지정한 JS 병합** <br>
 ```md
 gulp.task('combine:js', function(){
 	gulp
