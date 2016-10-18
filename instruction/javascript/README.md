@@ -3,8 +3,8 @@
 - `gulp-uglify` (압축)
 - `gulp-jshint` (문법검사)
 - `gulp-rename` (압축, 비압축 파일 출력)
+- `del` (특정 디렉터리 및 파일 삭제)
 <br>
-
 ## gulp-concat (병합) 
 - **설치 [ cmd : `npm i -D gulp-concat` ]**
 
@@ -161,4 +161,33 @@ gulp.task('combine:js', function(){
 		.pipe(gulp.dest('./dist'));
 });
 ```
+<br>
+## del (특정 디렉터리 및 파일 삭제) 
+- **설치 [ cmd : `npm i -D del` ]**
 
+- **Modules 호출**
+```md
+var gulp = require('gulp'),
+    jshint = require('gulp-jshint'),
+    uglify = require('gulp-uglify'),
+    concat = require('gulp-concat'),
+    rename = require('gulp-rename'),
+    del = require('del');
+```
+- **테스크 정의** <br>
+```md
+gulp.task('clean', function(){
+	del(['dist/*']);
+	del(['dist/*', '!dist/dont-delete.js']); //느낌표(!)를 붙이면 삭제대상에서 제외된다.
+});
+ 
+```
+<br>
+## 기본(Default) 테스크 정의
+- script 업무 
+ + 파일문법검사 > 병합 > 압축
+ + gulp.task('scripts', ['js:hint', 'js:concat', 'js:uglify']);
+ 
+- clean 업무 
+ + script 업무 이전에 clean 업무가 실행되도록 설정하여 저장.
+ + gulp.task('default', ['clean', 'scripts']); 
