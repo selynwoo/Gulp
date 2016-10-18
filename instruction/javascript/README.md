@@ -4,16 +4,16 @@
 <br>
 
 ## gulp-concat (병합) 
-**설치** <br>
+- **설치** <br>
 - cmd : `npm i -D gulp-concat` 
 
-**Modules 호출**
+- **Modules 호출**
 ```md
 var gulp = require('gulp'),
     concat = require('gulp-concat');
 ```
 
-**지정한 js 병합** <br>
+- **지정한 js 병합** <br>
 ```md
 gulp.task('combine:js', function(){
 	gulp
@@ -23,7 +23,7 @@ gulp.task('combine:js', function(){
 });
 ```
 
-**모든 js 병합** <br>
+- **모든 js 병합** <br>
 ```md
 gulp.task('combine:js', function(){
 	gulp
@@ -33,7 +33,7 @@ gulp.task('combine:js', function(){
 });
 ```
 
-**특정파일 우선적 병합** <br>
+- **특정파일 우선적 병합** <br>
 ```md
 gulp.task('combine:js', function(){
 	gulp
@@ -43,7 +43,7 @@ gulp.task('combine:js', function(){
 });
 ```
 
-**하위디렉터리 모든 js 병합** <br>
+- **하위디렉터리 모든 js 병합** <br>
 ```md
 gulp.task('combine:js', function(){
 	gulp
