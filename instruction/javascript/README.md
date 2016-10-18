@@ -191,3 +191,43 @@ gulp.task('clean', function(){
 - clean 업무 
  + script 업무 이전에 clean 업무가 실행되도록 설정하여 저장.
  + gulp.task('default', ['clean', 'scripts']); 
+ 
+ **테스크 정의**
+ ```md
+var path = {
+	js: {
+		src: 'src/js/libs/**/*.js',
+		dest: 'dist/',
+		filename: 'DOMLibrary.js'
+	}
+};
+
+// JS 문법검사
+gulp.task('js:hint', function(){
+	gulp.src(path.js.src)
+		.pipe(jshint())
+		.pipe(jshint.reporter('jshint-stylish'));
+});
+
+// JS 병합
+gulp.task('js:concat', function(){
+	gulp.src(path.js.src)
+		.pipe(concat(path.js.filename))
+		.pipe(gulp.dest(path.js.dest));
+});
+
+// JS 압축
+gulp.task('js:uglify', function(){
+	gulp.src(path.js.dest + path.js.filename)
+		.pipe(uglify())
+		.pipe(rename( { suffix: 'min' } )) //접미사 min
+		.pipe(gulp.dest(path.js.dest));
+});
+
+gulp.task('clean', function(){
+	del(['dist/*']);
+	del(['dist/*', '!dist/dont-delete.js']); //느낌표(!)를 붙이면 삭제대상에서 제외된다.
+});
+ ```
+ 
+ 
