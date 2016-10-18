@@ -2,6 +2,7 @@
 - `gulp-concat` (병합)
 - `gulp-uglify` (압축)
 - `gulp-jshint` (문법검사)
+- `gulp-rename` (압축, 비압축 파일 출력)
 <br>
 
 ## gulp-concat (병합) 
@@ -91,7 +92,7 @@ gulp.task('combine:js', function(){
 ## gulp-jshint (문법검사) 
 - **설치 [ cmd : `npm i -D gulp-jshint` ]**
 - **설치 [ cmd : `npm i jshint-stylish` ]**
-- 문법검사는 js 병합전
+- **문법검사는 js 병합전**
 
 - **Modules 호출**
 ```md
@@ -127,6 +128,36 @@ gulp.task('combine:js', function(){
 			mangle : false,
 			preserveComments: 'all'
 		}))
+		.pipe(gulp.dest('./dist'));
+});
+```
+<br>
+## gulp-rename (압축, 비압축 파일 출력) 
+- **설치 [ cmd : `npm i -D gulp-rename` ]**
+
+- **Modules 호출**
+```md
+var gulp = require('gulp'),
+    jshint = require('gulp-jshint'),
+    uglify = require('gulp-uglify'),
+    concat = require('gulp-concat'),
+    rename = require('gulp-rename');
+```
+
+- **압축, 비압축 파일 출력** <br>
+```md
+gulp.task('combine:js', function(){
+	gulp
+		.src('src/js/libs/**/*.js')
+		.pipe(jshint())
+		.pipe(jshint.reporter('jshint-stylish'))
+		.pipe(concat('DOMLibrary.js')) //비압축
+		.pipe(gulp.dest('./dist'))
+		.pipe(uglify({
+			mangle : false,
+			preserveComments: 'all'
+		}))
+		.pipe(rename('DOMLibrary.min.js')) //압축
 		.pipe(gulp.dest('./dist'));
 });
 ```
