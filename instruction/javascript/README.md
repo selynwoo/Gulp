@@ -71,6 +71,19 @@ gulp.task('combine:js', function(){
 		.pipe(uglify())
 		.pipe(gulp.dest('./dist'));
 });
+```
+
+- **압축 조건** <br>
+```md
+gulp.task('combine:js', function(){
+	gulp
+		.src('src/js/libs/**/*.js')
+		.pipe(concat('combined.js'))
+		.pipe(uglify({
+			mangle : false, //변수, 매개변수 축약여부
+			preserveComments: 'all' // 'all' : 모든주석 보존, 'some' : !(느낌표)가 붙은 주석만 보존
+		}))
+		.pipe(gulp.dest('./dist'));
 });
 ```
 
