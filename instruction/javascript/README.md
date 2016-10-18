@@ -1,6 +1,6 @@
 #Javascript 명령어 
 - `gulp-concat` (병합)
-- `gulp-uglify` (병합)
+- `gulp-uglify` (압)
 <br>
 
 ## gulp-concat (병합) 
@@ -51,4 +51,27 @@ gulp.task('combine:js', function(){
 		.pipe(gulp.dest('./dist'));
 });
 ```
+<br>
+## gulp-uglify (압축) 
+- **설치 [ cmd : `npm i -D gulp-uglify` ]**
+
+- **Modules 호출**
+```md
+var gulp = require('gulp'),
+    uglify = require('gulp-uglify'),
+    concat = require('gulp-concat');
+```
+
+- **압축** <br>
+```md
+gulp.task('combine:js', function(){
+	gulp
+		.src('src/js/libs/**/*.js')
+		.pipe(concat('combined.js'))
+		.pipe(uglify())
+		.pipe(gulp.dest('./dist'));
+});
+});
+```
+
 
