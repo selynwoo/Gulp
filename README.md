@@ -3,9 +3,9 @@
 
 <br>
 ## Nodejs 설치
-[nodejs 다운로드] (https://nodejs.org/)
+[nodejs 다운로드](https://nodejs.org/)
 - 설치 후 운영체제를 재시작 해야 정상 작동한다.
-![nodejs Download](Resources/images/node-msi.jpg)
+![nodejs Download](/Resources/images/node-msi.jpg)
 
 ### Node 버전확인
 - cmd : `node --version` 입력
